@@ -106,6 +106,7 @@ header {
 header nav {
   margin-top: 2rem;
   font-family: "Raleway", sans-serif;
+  margin-bottom: 3rem;
 }
 header nav #about {
   border-left: 2px solid black;
@@ -130,6 +131,12 @@ header nav a {
   height: 600px;
   background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
 }
+@media (max-width: 500px) {
+  .title-parent {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
 .title-parent .title-container {
   width: 800px;
   height: 550px;
@@ -144,12 +151,12 @@ header nav a {
   align-items: center;
   justify-content: space-between;
 }
-.title-parent .title-container div p {
+.title-parent .title-container div h1 {
   width: 75%;
   text-align: center;
   padding-top: 175px;
   padding-bottom: 1rem;
-  color: gray;
+  color: white;
   font-family: "Raleway", sans-serif;
   font-size: 5rem;
 }
@@ -170,6 +177,26 @@ header nav a {
   align-items: flex-start;
   justify-content: center;
 }
+@media (max-width: 500px) {
+  .artists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
+@media (max-width: 800px) and (min-width: 500px) {
+  .artists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+}
 .artists-container .artist {
   width: 50%;
   margin-top: 1rem;
@@ -181,6 +208,16 @@ header nav a {
   align-items: center;
   justify-content: center;
   font-family: "Raleway", sans-serif;
+}
+@media (max-width: 500px) {
+  .artists-container .artist {
+    width: 100%;
+  }
+}
+@media (max-width: 800px) and (min-width: 500px) {
+  .artists-container .artist {
+    width: 100%;
+  }
 }
 .artists-container .artist img {
   width: 300px;
@@ -196,4 +233,8 @@ header nav a {
   font-size: 2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+.artists-container .artist .bio {
+  font-size: 1.4rem;
+  text-align: center;
 }

@@ -6,10 +6,26 @@
     width: 100%;
     height: 600px;
 
-    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); // this works, image doesn't
+    @media @mobile {
+
+        margin: 0 auto;
+        width: 90%;
+
+    }
+
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); // this works, the image below doesn't, and I am done trying
+                                                                                         // to make it work.
 
     //background-image: url('assets/home.png'); // still not working, no clue why
+    //background-image: url("assets/home.png");
+    //background-image: url('/assets/home.png');
+    //background-image: url("/assets/home.png");
+    //background-image: 'assets/home.png';
+    //background-image: "assets/home.png";
+    //background-image: '/assets/home.png';
+    //background-image: "/assets/home.png";
     //background-image: '/assets/Frida-Kahlo.jpg'; // also doesn't work
+    // These images load in other img tags, but will not load in background-image property. Not sure why. Not wasting any more time tho.
     //background-position: center;
     //background-size: cover;
 
@@ -24,7 +40,7 @@
 
             .flexProperties(column, center, space-between);
 
-            p {
+            h1 {
 
                 width: 75%;
                 text-align: center;
@@ -32,7 +48,7 @@
                 padding-top: 175px;
                 padding-bottom: 1rem;
     
-                color: gray;
+                color: white;
                 font-family: @font;
                 font-size: 5rem;
     
@@ -62,6 +78,22 @@
 
     .flexProperties(row, flex-start);
 
+    @media @mobile {
+
+        .flexProperties(column, flex-end, space-evenly);
+        flex-wrap: wrap;
+        max-width: 100%;
+
+    }
+
+    @media @medium {
+
+        .flexProperties(column, flex-end, space-evenly);
+        flex-wrap: wrap;
+        max-width: 100%;
+
+    }
+
     .artist {
 
         width: 50%;
@@ -69,6 +101,18 @@
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: 3rem;
+
+        @media @mobile {
+
+            width: 100%;
+
+        }
+
+        @media @medium {
+
+            width: 100%;
+
+        }
 
         .flexProperties(column, center);
 
@@ -87,6 +131,13 @@
             font-size: 2rem;
             margin-top: 1rem;
             margin-bottom: 1rem;
+
+        }
+
+        .bio {
+
+            font-size: 1.4rem;
+            text-align: center;
 
         }
 
