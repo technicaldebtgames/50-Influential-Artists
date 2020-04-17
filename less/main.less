@@ -4,6 +4,7 @@
 
     .artist {
 
+        margin-top: 1rem;
         margin-left: 1rem;
         margin-right: 1rem;
 
@@ -11,11 +12,61 @@
 
         img {
 
-            .imageProperties(300px, 200px, 1rem);
+            .imageProperties(300px, 200px, 0.5rem);
+
+        }
+
+        a {
+
+            text-decoration: none;
+            color: black;
+            font-size: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
 
         }
 
         .flexProperties(column, center);
+
+    }
+
+}
+
+.title-container {
+
+    width: 800px;
+    height: 400px;
+
+    .flexProperties(column);
+    //background-image: url("/assets/home.png") bottom center no-repeat; // wtf is wrong with this
+
+    p {
+
+        width: 50%;
+        text-align: center;
+
+        padding-top: 175px;
+        padding-bottom: 1rem;
+
+        color: gray;
+        font-family: @font;
+        font-size: 5rem;
+
+    }
+
+    hr {
+
+        width: 100%;
+
+    }
+
+    button {
+
+        .buttonProperties(black, #EEEEEE, 0.75rem 2rem 0.75rem 2rem, 0.5rem);
+        font-family: @font;
+        font-size: 1.6rem;
+
+        margin-bottom: 100px;
 
     }
 
