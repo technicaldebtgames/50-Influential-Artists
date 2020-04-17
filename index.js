@@ -208,11 +208,13 @@ const artists = [
 (1) Name of the first artist in the array
 (2) Bio of the third artist in the array */
 
-
+console.log(artists[0].name);
+console.log(artists[2].bio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-
+artists[8].name = 'Vincent Van Gogh';
+console.log(artists[8].name);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -222,9 +224,14 @@ const artists = [
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(id, name) {
-    /* code here */
+function getArtistByIndex(arr, id) {
+    
+    return 'The artist at index ' + id + ' is ' + arr[id].name + '.';
+
   }
+
+  console.log(getArtistByIndex(artists, 0));
+  console.log(getArtistByIndex(artists, 8));
   
   /**
 
@@ -237,29 +244,74 @@ function getArtistByIndex(id, name) {
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(artists, id) {
+    
+    artists.splice(id, 1);
+
   }
   
+console.log('Item 8 before removal: ' + getArtistByIndex(artists, 8));
+removeArtist(artists, 8);
+console.log('Item 8 after removal: ' + getArtistByIndex(artists, 8));
+
   /**
 
 
 /* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
 
-function get20s(/* Code here */){
+function get20s(arr){
 
-    /* Code here */
+    let tempArr = [];
+
+    for (let i = 0; i < arr.length; i++){
+
+      if (arr[i].years[0] == '1' && arr[i].years[1] == '9'){
+
+        tempArr.push(arr[i]);
+
+      }
+
+    }
+
+    return tempArr;
+
+  }
+
+  let twenties = get20s(artists);
+
+  for (let i = 0; i < twenties.length; i++){
+
+    console.log(twenties[i].years + ', ' + twenties[i].name);
 
   }
 
 /* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(arr){
 
-    /* Code here */
+    let tempArr = [];
+
+    for (let i = 0; i < arr.length; i++){
+
+      if (arr[i].paintings > 100){
+
+        tempArr.push(arr[i]);
+
+      }
+
+    }
+
+    return tempArr;
 
   }
 
+  let lots = lotsOfArt(artists);
+
+  for (let i = 0; i < lots.length; i++){
+
+    console.log(lots[i].paintings + ', ' + lots[i].name);
+
+  }
 
 /* Task 7: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
 
@@ -270,20 +322,39 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
+function addArtist(newArtist){
 
-    /* Code here */
+    artists.push(newArtist);
 
   }
+
+let dan = {id: 21,
+           name: "Dan Brioli",
+           years: "1983 - 2020",
+           genre: "Web Design",
+           nationality: "USA",
+           bio: "Some words here."};
+
+addArtist(dan); // Will display below during checkArtist()
 
 
 /* Task 8: Create a function called `checkArtist` that accepts a string (name of an artist) and checks if that artist is in the dataset. */
 
-function checkArtist(/* Code here */){
+function checkArtist(n){
 
-    /* Code here */
+    for (let i = 0; i < artists.length; i++){
+
+      if (artists[i].name === n){
+
+        console.log(n + ' is in the artists dataset.');
+
+      }
+
+    }
 
   }
+
+checkArtist("Dan Brioli");
 
 
 
@@ -320,11 +391,10 @@ function getHTML(/* Code here */){
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */){
+function randomize(arr){
 
-    /* Code here */
 
-  }
 
+}
 
  /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */

@@ -1,0 +1,31 @@
+.flexProperties(@dir: row, @aliItems: center, @justify: center) {
+
+    display: flex;
+    flex-direction: @dir;
+    align-items: @aliItems;
+    justify-content: @justify;
+
+}
+
+.imageProperties(@w: 100%, @h: 100%, @radius: 0px){
+
+    width: @w;
+    height: @h;
+    border-radius: @radius;
+
+    &:hover {
+
+        opacity: 80%;
+
+    }
+
+}
+
+.buttonProperties(@textColor: white, @bgColor: black, @padding: 0px 0px 0px 0px, @radius: 0px){
+
+    color: @textColor;
+    background-color: @bgColor;
+    padding: @padding;
+    border-radius: @radius;
+
+}
